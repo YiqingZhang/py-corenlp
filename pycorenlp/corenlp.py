@@ -27,6 +27,7 @@ class StanfordCoreNLP:
             self.server_url, params={
                 'properties': str(properties)
             }, data=data, headers={'Connection': 'close'})
+        r.encoding = 'utf-8'
         output = r.text
         if ('outputFormat' in properties
              and properties['outputFormat'] == 'json'):
